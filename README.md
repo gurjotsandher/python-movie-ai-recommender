@@ -1,7 +1,5 @@
 # 🎬 CineSeek: Personalized Movie Suggestion Engine
 
-This repository contains all project files, configuration details, and guidelines required to run CineSeek—a fully functional movie suggestion engine—on your local machine or deploy it as a Django web application on your server or domain.
-
 | Section                                  | Overview                                                                                                            |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | 🎥 **Demo**                              | Explore CineSeek in action with a live demo hosted on a cloud-based PaaS platform                                   |
