@@ -1,5 +1,4 @@
-# Movie Recommendation System (MRS)
-
+# Movie Search Suggestions
 This repository contains all the project files and necessary details about applications required to run the project on your local machine as well as host it as a Django Application on your Server/Domain.
 
 | Title                                    | Description                                                                                                         |
