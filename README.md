@@ -91,7 +91,7 @@ Make sure the new dataset and model are placed in the `static` directory.
 
 ## Additional Information
 
-CineSeek is a movie recommendation system with a user-friendly web interface built using HTML, CSS, and JavaScript.
+CineSeek is a system with a user-friendly web interface built using web technology.
 
 ### Features
 - **Search Suggestions**: Users can search for movies by typing partial or full movie names.
