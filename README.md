@@ -1,113 +1,109 @@
-# Movie Search Suggestions
-This repository contains all the project files and necessary details about applications required to run the project on your local machine as well as host it as a Django Application on your Server/Domain.
+# 🎬 CineSeek: Personalized Movie Suggestion Engine
 
-| Title                                    | Description                                                                                                         |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Demo                                     | Sample Demo of MRS Hosted on free cloud PaaS                                                                       |
-| Requirements                             | Requirements and essential steps to get started with the project locally                                           |
-| Model Training                           | How the MRS was trained for demo as well as on a large movie dataset                                               |
-| Project Versatility                      | Guide on how to plug in any general recommendation model into this project and host it on servers                   |
-| Troubleshooting Issues                   | Guide to resolve errors faced during reproducibility                                                               |
+This repository contains all project files, configuration details, and guidelines required to run CineSeek—a fully functional movie suggestion engine—on your local machine or deploy it as a Django web application on your server or domain.
 
-<hr>
+| Section                                  | Overview                                                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 🎥 **Demo**                              | Explore CineSeek in action with a live demo hosted on a cloud-based PaaS platform                                   |
+| 📦 **Dependencies**                      | List of packages and step-by-step setup instructions for running CineSeek locally                                   |
+| 🧠 **Model Training**                    | Guide on how CineSeek’s recommendation model was trained on movie data and how you can adapt it for your own use   |
+| 🌐 **Deployment**                        | Detailed guide on deploying the project on cloud servers or running it on your local system                        |
+| 🛠️ **Error Resolution**                  | Troubleshooting section to help resolve common issues during project setup                                          |
 
-## 1. Demo
+---
 
-This section provides an overview of the project with a demo to explore its features.
+## 1. 🎥 CineSeek Demo
 
-1. Movie Recommendation System Hosted Application Demo
-2. Running MRS on Local System
-3. Sample Screenshots
-   
-   - **Home Screen**  
-     ![Home Screen](static/images/ss1.png)
-   
-   - **Navigation Screen**  
-     ![Navigation Screen](static/images/ss2.png)
-   
-   - **Search with Auto Suggestion**  
-     ![Search Functionality](static/images/ss3.png)
-   
-   - **Recommended Movies**  
-     ![Movie Recommended Results](static/images/ss4.png)
+Discover how CineSeek works through a demo and local setup instructions. Follow the steps below to get started:
 
-<hr>
+1. **Live Demo**: Try CineSeek hosted on a free cloud platform.
+2. **Local Setup**: Run the project locally on your machine.
+3. **Screenshots**: Check out how CineSeek looks and feels.
 
-## 2. Requirements
+### Sample Screenshots:
 
-To build this project without any errors/issues, the following requirements need to be satisfied:
+- **Home Screen**  
+  ![Home Screen](static/images/ss1.png)
 
-1. Create a Virtual Environment using Python (>=3.8, tested on 3.9.16)
-2. Install the dependencies from the requirements text file in the repository.
+- **Navigation Panel**  
+  ![Navigation Panel](static/images/ss2.png)
 
-<hr>
+- **Search with Suggestions**  
+  ![Search Functionality](static/images/ss3.png)
 
-## 3. Model Training
+- **Personalized Movie Recommendations**  
+  ![Recommendations](static/images/ss4.png)
 
-### 3.1 Training & Inference
+---
 
-For a complete guide on training and inference using the trained model, refer to the provided Python notebook.
+## 2. 📦 Requirements & Setup
 
-### 3.2 Django Web Application Integration
+Follow these steps to set up CineSeek on your system:
 
-A detailed guide explains the complete approach and directory structure essential to understand Django integration.
+1. Create a virtual environment using Python (>=3.8, tested on 3.9.16).
+2. Install all necessary dependencies from the `requirements.txt` file using the following command:
 
-<hr>
+```shell
+pip install -r requirements.txt
+```
+---
 
-## 4. Project Guide
+## 3. 🧠 Model Training & Customization
 
-### 4.1 Running it on Cloud
+### Training Overview
 
-A detailed guide explains the steps needed to deploy this application on a cloud-based service.
+For detailed instructions on training and using the movie recommendation model, refer to the provided Jupyter notebook. This guide walks you through the training process and inference steps.
 
-### 4.2 Running Locally
+### Django Web Integration
 
-Ensure you have completed the requirements section for creating your environment. Activate it using:
+The project structure and setup for Django integration is explained in detail in the project guide.
+
+---
+
+## 4. 🌐 Deployment Guide
+
+### Deploying on Cloud Platforms
+
+A comprehensive guide is available for deploying CineSeek on cloud platforms like Heroku, AWS, or other PaaS services.
+
+### Running Locally
+
+Once you’ve installed the necessary dependencies, activate your virtual environment and start the local server:
 
 ```shell
 /path/to/env/bin/activate
-```
-
-Once activated, navigate to the project root directory and run:
-
-```shell
 python manage.py runserver
 ```
+Access the app at `http://localhost:8000` in your browser.
 
-After starting the server, visit `http://localhost:8000` in your browser to access the demo locally.
+By default, the project uses a sample model. To switch to a different recommendation model:
 
-By default, this project will run on a demo model. If you wish to change the model, train and download the model of your choice using the provided Python notebook. Then, integrate it by modifying these two lines inside `recommender/views.py`:
+1. Train and download the model of your choice.
+2. Replace the following lines in `recommender/views.py`:
 
 ```python
 Line 5 : movies_data = pd.read_parquet("static/<dataset_name>.parquet")
 Line 73: model = pa.parquet.read_table('static/<model_name>.parquet').to_pandas()
 ```
-
-Ensure the dataset and model are placed in the `static` directory.
+Make sure the new dataset and model are placed in the `static` directory.
 
 ---
 
-### Additional Details
+## Additional Information
 
-This project implements a movie recommendation system with a simple web interface built using HTML, CSS, and JavaScript.
+CineSeek is a movie recommendation system with a user-friendly web interface built using HTML, CSS, and JavaScript.
 
-#### Inputs
-- Users can search for movies by providing a partial or complete movie name.
+### Features
+- **Search Suggestions**: Users can search for movies by typing partial or full movie names.
+- **Personalized Recommendations**: Get movie suggestions based on user input data.
+- **Visual Appeal**: The project uses custom styles and multimedia for a better user experience.
 
-#### Outputs
-- The system provides movie recommendations based on user input.
+### Dependencies
+- **CSS Files**: `cursor.css`, `page.css`, `navbar.css`
+- **Assets**: `static/logo.png`, `static/production_ID_4779866.mp4`
+- **Libraries**: jQuery, Bootstrap, Font Awesome, Tabler Icons
 
-#### Dependencies
-- CSS files: `cursor.css`, `page.css`, `navbar.css`
-- Logo: `static/logo.png`
-- Background video: `static/production ID_4779866.mp4`
-- External libraries: `jQuery`, `Bootstrap`, `Font Awesome`, `Tabler Icons`
+---
 
-#### Usage
-1. Open the HTML file in a web browser.
-2. Type the name of a movie in the search bar to get recommendations.
-
-**Note:** The database currently includes the top 2.5K movies based on IMDb ratings.
-
-> **A new version of the movie recommendation system is in development, aiming to process a larger dataset with better recommendations and additional features like recommendation buckets and mutual sharing. Stay tuned for updates!**
+> **Note:** This is the first version of CineSeek. An upcoming update will include expanded datasets, better recommendations, and new features like collaborative filtering and content-based buckets. Stay tuned!
 
